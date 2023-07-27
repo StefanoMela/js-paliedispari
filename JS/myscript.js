@@ -60,11 +60,13 @@ let userRandomNumber = askNumber();
 let computerRandomNumber = randomNumber();
 let sumEven = isSumEven(userRandomNumber, computerRandomNumber);
 const userPrint = document.getElementById("user-number-printer");
+const choicePrint = document.getElementById("user-choice-printer");
 const computerPrint = document.getElementById("computer-number-printer");
 const winnerPrint = document.getElementById("winner-printer");
 
 userPrint.innerText = userRandomNumber;
 computerPrint.innerText = computerRandomNumber;
+choicePrint.innerText = userChoice;
 
 if (sumEven && userChoice !== "Pari") {
 
