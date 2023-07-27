@@ -9,6 +9,7 @@
 
 // SVOLGIMENTO: 
 
+// FUNZIONI
 
 function askNumber() {
     let userNumber = parseInt(prompt("Dimmi un numero da 1 a 5", "3"));
@@ -29,16 +30,20 @@ function randomNumber(min = 1, max = 5, lastIncluded = true) {
     
 };
 
+
 function isSumEven(num1, num2 ) {
     
     return ((num1 + num2) % 2 == 0)
     
 };
 
+//
+
 const userChoice = prompt("Pari o dispari?", "Pari");
 let userRandomNumber = askNumber();
 let computerRandomNumber = randomNumber();
 let sumEven = isSumEven(userRandomNumber, computerRandomNumber);
+
 const userPrint = document.getElementById("user-number-printer");
 const choicePrint = document.getElementById("user-choice-printer");
 const computerPrint = document.getElementById("computer-number-printer");
@@ -61,6 +66,3 @@ if (sumEven && userChoice !== "Pari") {
 } else {
     winnerPrint.innerText = "Ha vinto il pc!";
 };
-
-// console.log(userRandomNumber);
-// console.log(computerRandomNumber);
