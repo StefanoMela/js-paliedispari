@@ -5,9 +5,32 @@
 
 // SVOLGIMENTO:
 
-// const userWord = prompt("Dimmi una parola");
+const userWord = prompt("Dimmi una parola");
+const printer = document.getElementById("first-printer");
 
-// function palindromo () {
-
+if (isPalindormo(userWord)){
     
-// }
+    printer.innerText = userWord;
+    
+} else {
+    
+    printer.innerText = ("Non è palindroma");
+};
+
+
+// FUNZIONI 
+
+function isPalindormo(parola) {
+    
+    let sameWord = false;
+    let reverseWord = "";
+    
+    for (let i = parola.length - 1; i >= 0; i--) {
+        const letter = parola[i];
+        reverseWord += letter;
+    };
+    
+    sameWord = (userWord == reverseWord);
+
+    return sameWord;
+}
