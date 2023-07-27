@@ -1,24 +1,3 @@
-// ESERCIZIO 1
-// TRACCIA: 
-// Chiedere all'utente di inserire una parola
-// Creare una funzione per capire se la parola inserita è palindroma.
-
-// SVOLGIMENTO:
-
-// const userWord = prompt("Dimmi una parola");
-
-// function palindromo () {
-
-    
-// }
-
-
-
-
-
-
-
-
 // ESERCIZIO 2
 // TRACCIA: 
 // L'utente sceglie pari o dispari e inserisce un numero da 1 a 5. 
@@ -28,8 +7,9 @@
 
 // generare random Numb fra due dati math.floor(math.random() * (max - min)) + min;
 
-
 // SVOLGIMENTO: 
+
+
 function askNumber() {
     let userNumber = parseInt(prompt("Dimmi un numero da 1 a 5", "3"));
     
