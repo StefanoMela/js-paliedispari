@@ -34,7 +34,7 @@ function askNumber() {
 };
 
 
-let userChoice = prompt("Pari o dispari?", "Pari");
+let userChoice = prompt("Pari o dispari?", "Pari").trim().toUpperCase();
 while (userChoice != "Pari" && userChoice != "Dispari") {
     alert("Inserisci dati corretti");
     userChoice = prompt("Pari o dispari?", "Pari");
