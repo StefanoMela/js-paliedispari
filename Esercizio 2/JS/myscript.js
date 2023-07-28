@@ -11,6 +11,13 @@
 
 // FUNZIONI
 
+
+/**
+ * funzione che chiede un numero all'utente e lo controlla
+ * 
+ * 
+ * @returns {int} il numero di cui l'utente fa l'input
+ */
 function askNumber() {
     let userNumber = parseInt(prompt("Dimmi un numero da 1 a 5", "3"));
     
@@ -22,6 +29,13 @@ function askNumber() {
     return userNumber;
 };
 
+/**
+ * Funzione che genera un numero random
+ * @param {int} min valore minimo generato
+ * @param {int} max valore massimo generato
+ * @param {*} lastIncluded 
+ * @returns {int} numero randomico generato fra min e max
+ */
 function randomNumber(min = 1, max = 5, lastIncluded = true) {
     
     if (lastIncluded) max++;
@@ -53,6 +67,8 @@ userPrint.innerText = userRandomNumber;
 computerPrint.innerText = computerRandomNumber;
 choicePrint.innerText = userChoice;
 
+
+
 if (sumEven && userChoice !== "Pari") {
 
     winnerPrint.innerText = "Ha vinto il pc!";
@@ -60,9 +76,14 @@ if (sumEven && userChoice !== "Pari") {
 } else if (sumEven && userChoice == "Pari") {
 
     winnerPrint.innerText = "Hai vinto tu";
+
+
 } else if (!sumEven && userChoice !== "Pari") {
 
     winnerPrint.innerText = "Hai vinto tu";
+
 } else {
+
     winnerPrint.innerText = "Ha vinto il pc!";
+
 };
