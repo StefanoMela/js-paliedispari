@@ -18,16 +18,63 @@
  * 
  * @returns {int} il numero di cui l'utente fa l'input
  */
+
 function askNumber() {
+
     let userNumber = parseInt(prompt("Dimmi un numero da 1 a 5", "3"));
     
-    while (isNaN(userNumber) || userNumber > 5) {
+    while (isNaN(userNumber) || userNumber < 1 || userNumber > 5) {
+
         alert("Dati non validi");
+
         userNumber = parseInt(prompt("Dimmi un numero da 1 a 5"));
     }
-    
+
     return userNumber;
 };
+
+
+let userChoice = prompt("Pari o dispari?", "Pari");
+while (userChoice != "Pari" && userChoice != "Dispari") {
+    alert("Inserisci dati corretti");
+    userChoice = prompt("Pari o dispari?", "Pari");
+};
+
+
+let userRandomNumber = askNumber();
+let computerRandomNumber = randomNumber();
+let sumEven = isSumEven(userRandomNumber, computerRandomNumber);
+
+const userPrint = document.getElementById("user-number-printer");
+const choicePrint = document.getElementById("user-choice-printer");
+const computerPrint = document.getElementById("computer-number-printer");
+const winnerPrint = document.getElementById("winner-printer");
+const winner = isWinner(sumEven, userChoice);
+
+userPrint.innerText = userRandomNumber;
+computerPrint.innerText = computerRandomNumber;
+choicePrint.innerText = userChoice;
+
+
+// if (sumEven && userChoice !== "Pari") {
+
+//     winnerPrint.innerText = "Ha vinto il pc!";
+
+// } else if (sumEven && userChoice == "Pari") {
+
+//     winnerPrint.innerText = "Hai vinto tu";
+
+
+// } else if (!sumEven && userChoice !== "Pari") {
+
+//     winnerPrint.innerText = "Hai vinto tu";
+
+// } else {
+
+//     winnerPrint.innerText = "Ha vinto il pc!";
+
+// };
+
 
 /**
  * Funzione che genera un numero random
@@ -51,39 +98,13 @@ function isSumEven(num1, num2 ) {
     
 };
 
-//
+function isWinner (sumEven, userChoice) {
 
-const userChoice = prompt("Pari o dispari?", "Pari");
-let userRandomNumber = askNumber();
-let computerRandomNumber = randomNumber();
-let sumEven = isSumEven(userRandomNumber, computerRandomNumber);
+if (sumEven && userChoice == "Pari" || !sumEven && userChoice == "Dispari") {
 
-const userPrint = document.getElementById("user-number-printer");
-const choicePrint = document.getElementById("user-choice-printer");
-const computerPrint = document.getElementById("computer-number-printer");
-const winnerPrint = document.getElementById("winner-printer");
-
-userPrint.innerText = userRandomNumber;
-computerPrint.innerText = computerRandomNumber;
-choicePrint.innerText = userChoice;
-
-
-
-if (sumEven && userChoice !== "Pari") {
-
-    winnerPrint.innerText = "Ha vinto il pc!";
-
-} else if (sumEven && userChoice == "Pari") {
-
-    winnerPrint.innerText = "Hai vinto tu";
-
-
-} else if (!sumEven && userChoice !== "Pari") {
-
-    winnerPrint.innerText = "Hai vinto tu";
-
-} else {
-
-    winnerPrint.innerText = "Ha vinto il pc!";
-
+    return  winnerPrint.innerText = "Hai vinto tu";
+}
+else {
+    return winnerPrint.innerText = "Ha vinto il pc!";
+};
 };
